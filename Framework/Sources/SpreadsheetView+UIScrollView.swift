@@ -17,15 +17,26 @@ extension SpreadsheetView {
             tableView.contentOffset = newValue
         }
     }
-
-    public var scrollIndicatorInsets: UIEdgeInsets {
+    
+    public var horizontalScrollIndicatorInsets: UIEdgeInsets {
+         get {
+            return overlayView.horizontalScrollIndicatorInsets
+         }
+         set {
+             overlayView.horizontalScrollIndicatorInsets = newValue
+         }
+     }
+    
+    
+    public var verticalScrollIndicatorInsets: UIEdgeInsets {
         get {
-            return overlayView.scrollIndicatorInsets
+            return overlayView.verticalScrollIndicatorInsets
         }
         set {
-            overlayView.scrollIndicatorInsets = newValue
+            overlayView.verticalScrollIndicatorInsets = newValue
         }
     }
+    
 
     public var contentSize: CGSize {
         get {
