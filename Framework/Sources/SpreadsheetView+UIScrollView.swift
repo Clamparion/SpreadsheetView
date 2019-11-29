@@ -18,6 +18,7 @@ extension SpreadsheetView {
         }
     }
     
+    @available(iOSApplicationExtension 11.1, *)
     public var horizontalScrollIndicatorInsets: UIEdgeInsets {
          get {
             return overlayView.horizontalScrollIndicatorInsets
@@ -27,7 +28,7 @@ extension SpreadsheetView {
          }
      }
     
-    
+    @available(iOSApplicationExtension 11.1, *)
     public var verticalScrollIndicatorInsets: UIEdgeInsets {
         get {
             return overlayView.verticalScrollIndicatorInsets

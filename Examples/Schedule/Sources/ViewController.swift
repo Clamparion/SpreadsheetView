@@ -45,6 +45,9 @@ class ViewController: UIViewController, SpreadsheetViewDataSource, SpreadsheetVi
 
         spreadsheetView.intercellSpacing = CGSize(width: 4, height: 1)
         spreadsheetView.gridStyle = .none
+        spreadsheetView.circularScrolling = CircularScrolling.Configuration.horizontally
+        spreadsheetView.circularScrolling =
+        CircularScrolling.Configuration.horizontally.columnHeaderNotRepeated
 
         spreadsheetView.register(DateCell.self, forCellWithReuseIdentifier: String(describing: DateCell.self))
         spreadsheetView.register(TimeTitleCell.self, forCellWithReuseIdentifier: String(describing: TimeTitleCell.self))
