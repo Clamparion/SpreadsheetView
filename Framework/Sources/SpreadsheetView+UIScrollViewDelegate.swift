@@ -40,6 +40,8 @@ extension SpreadsheetView: UIScrollViewDelegate {
         columnHeaderView.contentOffset.y = tableView.contentOffset.y
 
         setNeedsLayout()
+        
+        delegate?.spreadsheetView(self, didScrollWithScrollView: scrollView)
     }
 
     public func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
@@ -50,6 +52,7 @@ extension SpreadsheetView: UIScrollViewDelegate {
         delegate?.spreadsheetView(self, didSelectItemAt: indexPath)
         pendingSelectionIndexPath = nil
     }
+    
 
     @available(iOS 11.0, *)
     public func scrollViewDidChangeAdjustedContentInset(_ scrollView: UIScrollView) {

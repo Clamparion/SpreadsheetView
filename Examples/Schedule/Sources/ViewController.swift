@@ -96,6 +96,10 @@ class ViewController: UIViewController, SpreadsheetViewDataSource, SpreadsheetVi
     func frozenRows(in spreadsheetView: SpreadsheetView) -> Int {
         return 2
     }
+    
+    func spreadsheetView(_ spreadsheetView: SpreadsheetView, didScrollWithScrollView scrollView: UIScrollView) {
+        print(spreadsheetView.visibleCells)
+    }
 
     func spreadsheetView(_ spreadsheetView: SpreadsheetView, cellForItemAt indexPath: IndexPath) -> Cell? {
         if case (1...(dates.count + 1), 0) = (indexPath.column, indexPath.row) {
