@@ -98,9 +98,24 @@ class ViewController: UIViewController, SpreadsheetViewDataSource, SpreadsheetVi
     }
     
     func spreadsheetView(_ spreadsheetView: SpreadsheetView, didScrollWithScrollView scrollView: UIScrollView) {
-        print(spreadsheetView.visibleCells)
+        //print(spreadsheetView.visibleCells)
     }
 
+
+
+   func spreadsheetView(_ spreadsheetView: SpreadsheetView, scrollViewDidEndDecelerating scrollView: UIScrollView){
+   
+   }
+   func spreadsheetView(_ spreadsheetView: SpreadsheetView, scrollViewWillBeginDragging scrollView: UIScrollView){
+ 
+   }
+func spreadsheetView(_ spreadsheetView: SpreadsheetView, scrollViewWillEndDragging scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>){
+    print(velocity.x)
+    print(targetContentOffset.pointee.x);
+    print("---")
+}
+
+    
     func spreadsheetView(_ spreadsheetView: SpreadsheetView, cellForItemAt indexPath: IndexPath) -> Cell? {
         if case (1...(dates.count + 1), 0) = (indexPath.column, indexPath.row) {
             let cell = spreadsheetView.dequeueReusableCell(withReuseIdentifier: String(describing: DateCell.self), for: indexPath) as! DateCell

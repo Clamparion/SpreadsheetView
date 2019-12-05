@@ -53,6 +53,17 @@ extension SpreadsheetView: UIScrollViewDelegate {
         pendingSelectionIndexPath = nil
     }
     
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        delegate?.spreadsheetView(self, scrollViewDidEndDecelerating: scrollView)
+    }
+    
+    public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        delegate?.spreadsheetView(self, scrollViewWillBeginDragging: scrollView)
+    }
+    
+    public func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        delegate?.spreadsheetView(self, scrollViewWillEndDragging: scrollView, withVelocity: velocity, targetContentOffset: targetContentOffset)
+    }
 
     @available(iOS 11.0, *)
     public func scrollViewDidChangeAdjustedContentInset(_ scrollView: UIScrollView) {

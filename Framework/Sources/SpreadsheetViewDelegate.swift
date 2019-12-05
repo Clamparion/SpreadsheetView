@@ -82,7 +82,14 @@ public protocol SpreadsheetViewDelegate: class {
     func spreadsheetView(_ spreadsheetView: SpreadsheetView, didDeselectItemAt indexPath: IndexPath)
     
     
-     func spreadsheetView(_ spreadsheetView: SpreadsheetView, didScrollWithScrollView scrollView: UIScrollView)
+    func spreadsheetView(_ spreadsheetView: SpreadsheetView, didScrollWithScrollView scrollView: UIScrollView)
+    
+    func spreadsheetView(_ spreadsheetView: SpreadsheetView, scrollViewDidEndDecelerating scrollView: UIScrollView)
+    
+    func spreadsheetView(_ spreadsheetView: SpreadsheetView, scrollViewWillBeginDragging scrollView: UIScrollView)
+    
+    func spreadsheetView(_ spreadsheetView: SpreadsheetView, scrollViewWillEndDragging scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>)
+    
     
 }
 
@@ -95,4 +102,7 @@ extension SpreadsheetViewDelegate {
     public func spreadsheetView(_ spreadsheetView: SpreadsheetView, didSelectItemAt indexPath: IndexPath) {}
     public func spreadsheetView(_ spreadsheetView: SpreadsheetView, didDeselectItemAt indexPath: IndexPath) {}
     public func spreadsheetView(_ spreadsheetView: SpreadsheetView, didScrollWithScrollView scrollView: UIScrollView) {}
+    public func spreadsheetView(_ spreadsheetView: SpreadsheetView, scrollViewDidEndDecelerating scrollView: UIScrollView){}
+    public func spreadsheetView(_ spreadsheetView: SpreadsheetView, scrollViewWillBeginDragging scrollView: UIScrollView){}
+    public func spreadsheetView(_ spreadsheetView: SpreadsheetView, scrollViewWillEndDragging scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>){}
 }
